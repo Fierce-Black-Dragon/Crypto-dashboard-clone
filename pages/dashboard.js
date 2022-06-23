@@ -2,28 +2,11 @@ import React, { useState } from "react";
 import {
   Flex,
   Heading,
-  Avatar,
-  AvatarGroup,
-  Text,
-  Icon,
-  IconButton,
-  Table,
-  Thead,
-  Tbody,
-  Tr,
-  Th,
-  Td,
-  Divider,
-  Link,
-  Box,
-  Button,
   Input,
   InputGroup,
-  InputLeftElement,
   Stack,
   InputLeftAddon,
   Grid,
-  GridItem,
 } from "@chakra-ui/react";
 import { SiRobotframework } from "react-icons/si";
 
@@ -32,6 +15,7 @@ import { BsSearch } from "react-icons/bs";
 import SideNavbar from "../component/SideNavbar";
 import WorkStation from "../component/WorkStation";
 import ProjectSpotlight from "../component/ProjectSpotlight";
+import TrendingList from "../component/TrendingList";
 
 export default function Dashboard() {
   const [display, changeDisplay] = useState("hide");
@@ -53,6 +37,7 @@ export default function Dashboard() {
         flexDir="column"
         mx={["auto", "1px"]}
         overflow="auto"
+        scrollSnapType={"none"}
         minH="100vh"
       >
         {/* search  */}
@@ -122,15 +107,15 @@ export default function Dashboard() {
         <ProjectSpotlight />
       </Flex>
       <Grid
-        minH="100vh"
+        minH={["100%", "100vh"]}
+        minW={["100vh", "30%", "30%", "30%"]}
         w={["100%", "40vh"]}
         bgColor="gray.800"
         templateColumns={["5fr"]}
         gap={1}
         overflow="auto"
       >
-        {" "}
-        dsd
+        <TrendingList />
       </Grid>
     </Flex>
   );
