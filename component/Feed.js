@@ -21,8 +21,8 @@ function Feature({ title, desc, active, ...rest }) {
   return (
     <Box
       p={5}
-     w={["100%", "100%", "100%", "39vh"]}
-      minh={["7vh"]}
+      minW="35vh"
+      minh={["4vh","7vh"]}
       shadow="md"
       borderWidth="1px"
       borderRadius={35}
@@ -85,11 +85,11 @@ const Feed = () => {
   return (
     <Flex
 
-         w={["50%", "50%", "70%", "39vh"]}
+         w={["60%", "50%", "70%", "39vh"]}
       bgColor="gray.800"
     ml={["2%", ""]}
       mx={["", "auto", "auto", "0"]}
-      h={["40vh", "40vh", "40vh", "60vh"]}
+      h={["30vh", "40vh", "40vh", "60vh"]}
      
       borderRadius={15}
     >
@@ -97,7 +97,7 @@ const Feed = () => {
         w={["80vh", "80vh", "80vh", "40vh"]}
         bgColor="gray.800"
         flexDir={["row", "row", "row", "column"]}
-        overflow={"scroll"}
+        overflow={"auto"}
         gap={1}
       >
         <Feature
@@ -109,8 +109,9 @@ const Feed = () => {
           return (
             <>
               <Feature
-                title="Save Money"
-                desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
+                title="
+Price analysis 6/24: BTC, ETH, BNB, XRP, ADA, SOL, DOGE, DOT, SHIB, LEO"
+                desc="BEWARE IMPOSTERS! Crypto is awesome and everyone should know about it! I'm making it my job to spread the exciting news about the best cryptocurrencies out there."
               />
             </>
           );
