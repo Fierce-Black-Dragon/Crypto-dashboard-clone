@@ -10,7 +10,6 @@ import {
   Button,
   Text,
   IconButton,
-
 } from "@chakra-ui/react";
 
 import Image from "next/image";
@@ -23,7 +22,7 @@ import ProjectSpotlight from "../component/ProjectSpotlight";
 
 import EndSECtion from "../component/EndSEction";
 import Options from "../component/Options";
-import Feed from "../component/Feed"
+import Feed from "../component/Feed";
 import SideBAr from "../component/SideBAr";
 export default function Dashboard() {
   const [display, changeDisplay] = useState(false);
@@ -34,7 +33,6 @@ export default function Dashboard() {
       templateColumns={["100%", "100%", "100%", "10% 65% 35%"]}
       gap={1}
       minW="100%"
- 
       overflow="hidden"
       bgColor="rgba(0, 0, 0, 0.92)"
       z-index={0}
@@ -48,7 +46,7 @@ export default function Dashboard() {
         alig="center "
         justify="space-evenly"
       >
-        <Flex justifyContent="space-between" mr="14%">
+        <Flex justifyContent="space-between">
           <Button
             onClick={() => {
               changeDisplay(!display);
@@ -56,27 +54,34 @@ export default function Dashboard() {
           >
             <GiHamburgerMenu />
           </Button>
-          <Image src="/logo.png" alt="" height={40} width={40} px={2} />
+          <Image src="/logo.png" alt="" height={15} width={20} px={2} />
 
-          <Heading
-            fontSize={["2xl"]}
+          <Text
+            fontSize={["lg"]}
             alignSelf="center"
             letterSpacing="tight"
             mx={2}
             outline="none"
           >
             InvestDex
-          </Heading>
+          </Text>
         </Flex>
 
-        <Text ml={4} mt={4}> 24 GWei ETH: $1149.6</Text>
-     <Flex onClick={() => {
+        <Text mt={2} fontSize="smaller">
+          {" "}
+          24 GWei ETH: $1149.6
+        </Text>
+        <Flex
+          onClick={() => {
             changeSearch(!search);
-          }}>   <IconButton
-          aria-label="Search database"
-          icon={<BsSearch color="gold" />}
-          
-        /></Flex>
+          }}
+        >
+          {" "}
+          <IconButton
+            aria-label="Search database"
+            icon={<BsSearch color="gold" />}
+          />
+        </Flex>
       </Flex>
       {/* main body */}
       <Flex
@@ -96,7 +101,7 @@ export default function Dashboard() {
           // justifyContent="space-between"
           alignItems="center"
           alignContent="center"
-          display={["none", "flex"]}
+          display={["none", "none", "none", "flex"]}
         >
           <Heading fontWeight="bold" letterSpacing="tight" mr={["none", 4]}>
             InvestSuite
@@ -107,7 +112,10 @@ export default function Dashboard() {
             p={1}
             borderRadius={14}
             display={[
-              `${search ? "fixed" : ""}`,`${search ? "fixed" : ""}`,
+              `${!search ? "none" : ""}`,
+              `${!search ? "none" : ""}`,
+              `${!search ? "none" : ""}`,
+              `${!search ? "none" : ""}`,
               "flex",
             ]}
           >

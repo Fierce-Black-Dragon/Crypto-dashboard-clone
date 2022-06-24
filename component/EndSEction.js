@@ -11,8 +11,9 @@ const EndSECtion = () => {
   return (
     <Grid
       minH={["100%", "100vh"]}
-      minW={["100vh", "30%", "30%", "100%"]}
-      w={["100%", "100%", "100%", "50vh"]}
+     w={["100%", "50%", "70%", "100%"]}
+    
+ 
       bgColor="#22222f"
       templateColumns={["5fr"]}
       gap={1}

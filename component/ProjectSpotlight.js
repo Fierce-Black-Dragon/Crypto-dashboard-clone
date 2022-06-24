@@ -22,7 +22,12 @@ const ProjectSpotlight = () => {
   const [display, changeDisplay] = useState("hide");
   const [value, changeValue] = useState(1);
   return (
-    <Flex flexDir="column" w="100%">
+    <Flex flexDir="column"  ml={["2%", ""]}
+      mx={["", "auto", "auto", "0"]}
+    
+      w={["80%", "80%", "80%", "100%"]}
+    
+    >
       <Heading fontSize="xl" mt={4}>
         {" "}
         Spotlight{" "}

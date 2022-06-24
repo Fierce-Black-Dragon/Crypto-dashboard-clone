@@ -21,7 +21,7 @@ function Feature({ title, desc, active, ...rest }) {
   return (
     <Box
       p={5}
-      minW="35vh"
+     w={["70%", "70%", "70%", "39vh"]}
       minh={["15vh"]}
       shadow="md"
       borderWidth="1px"
@@ -83,10 +83,13 @@ const Feed = () => {
   const nos = [1, 2, 3, 4, 5, 9, 4, 7, 5];
   return (
     <Flex
-      w={["100%", "90%", "90%", "39vh"]}
+
+         w={["50%", "50%", "70%", "39vh"]}
       bgColor="gray.800"
-      h={["40vh", "60vh"]}
-      mx="auto"
+    ml={["2%", ""]}
+      mx={["", "auto", "auto", "0"]}
+      h={["40vh", "40vh", "40vh", "60vh"]}
+     
       borderRadius={15}
     >
       <Flex

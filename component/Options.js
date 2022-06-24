@@ -49,9 +49,11 @@ const Options = () => {
   return (
     <Grid
       h={["60vh"]}
-w={["100%", "90%","90%","39vh"]}
+       w={["50%", "50%", "70%", "39vh"]}
       bgColor="gray.800"
-      mx="auto"
+         ml={["2%", ""]}
+      mx={["", "auto", "auto", "0"]}
+
       templateColumns={["5fr"]}
       gap={1}
       borderRadius={15}

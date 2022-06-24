@@ -42,7 +42,7 @@ const SelectBtn = () => {
           color="#fff"
           justifycontent="center"
           alignItems="center"
-          ml={["60%","40%"]}
+          ml={["40%","40%"]}
         >
           <span> see{open ? " less" : " more"}</span>
           <span>
