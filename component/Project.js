@@ -20,9 +20,9 @@ const Project = ({ text }) => {
     <Flex
       flexDir="column"
       p={[2, 2, 6]}
-      w={["35vh"]}
-      minWidth={"45vh"}
-      bgColor="gray.600"
+      w={["25vh"]}
+      minWidth={"35vh"}
+ bgColor="#22222F"
       postion="realtive"
       overflowX={["scroll", null]}
       overflowY={"scroll"}
@@ -30,14 +30,14 @@ const Project = ({ text }) => {
       h={200}
       borderRadius={50}
     >
-      <Flex ml="3" justifyContent="flex-start">
-        <Avatar src="" my={2} />
+      <Flex ml="3">
+        <Avatar src="/755903383c2a746c7ff170b0c9ad2ff1.png" my={2} />
 
         <Flex flexDir="column">
           <Text fontWeight="bold" ml={5}>
-            Segun Adebayo
+       Crypto Coffee
           </Text>
-          <HStack ml={["110%"]}>
+          <HStack ml={["50%"]} mx="auto">
             <Center w="20px" h="20px" color="white">
               <TiHome color="black" />
             </Center>
@@ -75,7 +75,7 @@ const Project = ({ text }) => {
           <TagLabel mr="2">Details {"  "}</TagLabel>
         </Tag>
       </Link>
-      <Text fontSize={"sm"} textAlign={"left"}>
+      <Text fontSize={"10px"} textAlign={"left"}>
         {text}
       </Text>
     </Flex>

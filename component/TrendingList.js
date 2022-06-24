@@ -3,6 +3,7 @@ import {
   Button,
   Divider,
   Flex,
+  Grid,
   Heading,
   Tab,
   Table,
@@ -32,118 +33,126 @@ import TableN from "./TableN";
 
 const TrendingList = () => {
   return (
-    <Flex flexDir={"column"} w="100%" mW={["60vh"]}>
-      <Flex>
-        <Button>Show all</Button>
-      </Flex>
-      <Tabs bgColor="black">
-        <TabList overflowX="auto">
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaEthereum />
-            Ethereum
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            <FaBitcoin />
-            <p> BNB Chain</p>
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaGg />
-            Polygon
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaStrava />
-            Avalanche
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaFantasyFlightGames />
-            Fantom
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaEmpire />
-            Cronos
-          </Tab>
-          <Tab fontSize="small" w={"fit-content"}>
-            {" "}
-            <FaPhoenixSquadron />
-            Syscoin
-          </Tab>
-        </TabList>
-
-        <TabPanels h="max-content">
+    <Tabs bgColor="#22222f" maxH={["50vh"]} minW="90%" overflowX="none">
+      <TabList overflowX="scroll" w={["100%", "100%", "70vh"]}>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaEthereum />
+          Ethereum
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          <FaBitcoin />
+          <p> BNB Chain</p>
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaGg />
+          Polygon
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaStrava />
+          Avalanche
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaFantasyFlightGames />
+          Fantom
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaEmpire />
+          Cronos
+        </Tab>
+        <Tab fontSize="small" w={"fit-content"}>
+          {" "}
+          <FaPhoenixSquadron />
+          Syscoin
+        </Tab>
+      </TabList>
+      <Flex
+        my={4}
+       
+        display={["flex", "none"]}
+        position={"relative"}
+        alignItems="center"
+       
+      >
+        <Flex
+          // justifyContent={"center"}
+          alignItems="center"
+          pos={"absolute"}
+          left="5%"
+          height={35}
+          width={35}
+          ml="1%"
+        >
+          <Image
+            src="/download.png"
+            width={205}
+            height={205}
+            alt=""
+            style={{ zIndex: 10 }}
+          />
+        </Flex>
+        <Flex
+          width={"55%"}
+          h="29%"
+          minW={"max-content"}
+          alignSelf="flex-start"
+ 
+          textAlign="center"
+          alignItems={"center"}
+          bg="rgba(126,104,255,.4)"
+          ml="10%"
+          borderRadius={15}
+        >
           <Flex
-            my={4}
-            justifyContent="space-between"
-            mt={4}
-            display={["flex", "none"]}
+            // justifyContent="space-evenly"
+            textAlign="center"
+            alignItems="center"
+            p={2}
           >
-            <Image
-              src="/download.png"
-              width={45}
-              height={45}
-              alt=""
-              style={{ zIndex: 10 }}
-            />
-            <Flex
-              width={"70%"}
-              minW="max-content"
-              alignSelf="flex-start"
-              justifyContent={"space-betwwen"}
-              textAlign="center"
-              alignItems={"center"}
-              bg="blue.500"
-              borderRadius={15}
-              mr={5}
-            >
-              <Flex
-                justifyContent="space-evenly"
-                textAlign="center"
-                alignItems="center"
-                p={2}
-              >
-                <Text ml={4} fontWeight="extrabold" fontSize="2xl">
-                  #1{" "}
-                </Text>
-                <Text ml={2}>USDT</Text>
-              </Flex>
-              <Text ml="70%" paddingRight={"14px"}>
-                $1.097
-              </Text>
-            </Flex>
+            <Text ml={4} fontWeight="extrabold" fontSize="2xl">
+              #1{" "}
+            </Text>
+            <Text ml={2}>USDT</Text>
           </Flex>
-          <Table>
-            <Thead>
-              <Tr color="gray">
-                <Th>#</Th>
-                <Th>Name </Th>
-                <Th>Price Change</Th>
-              </Tr>
-            </Thead>
-          </Table>
+       
+          <Text   ml="50%" color="rgb(126, 104, 255)" fontSize="20px" >$0.0..0096</Text>
+        </Flex>
+      </Flex>
+      <Grid templateColumns=" 1fr 2fr 2fr" height={3} p={2}>
 
-          <Divider />
-          <TabPanel>
-            <Table>
-              <Tbody>
-                <Tr color="gray">
-                  <Td>1</Td>
-                  <Td>USDC / TUSD</Td>
-                  <Td>
-                    <></>2.19%
-                  </Td>
-                </Tr>
-              </Tbody>
-            </Table>
-          </TabPanel>
-          <TabPanel></TabPanel>
-          <TabPanel></TabPanel>
-        </TabPanels>
-      </Tabs>
-    </Flex>
+        <Text>#</Text>
+        <Text>Name</Text>
+        <Text>Price</Text>
+      </Grid>
+      <Divider mt={4} style={{ height: "2px" }} bgColor="whiteAlpha.100" />
+      <TabPanels h="max-content" minH={["50vh"]} minW="100%" overflowY="auto">
+        <TabPanel overflow={"auto"}>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+        <TabPanel>
+          <TableN />
+        </TabPanel>
+      </TabPanels>
+    </Tabs>
   );
 };
 

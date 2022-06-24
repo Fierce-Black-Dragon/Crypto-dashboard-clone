@@ -7,44 +7,96 @@ import {
   Stack,
   InputLeftAddon,
   Grid,
-} from "@chakra-ui/react";
-import { SiRobotframework } from "react-icons/si";
+  Button,
+  Text,
+  IconButton,
 
-import { AiOutlineArrowRight, AiOutlineCalendar } from "react-icons/ai";
+} from "@chakra-ui/react";
+
+import Image from "next/image";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { GrClose } from "react-icons/gr";
 import { BsSearch } from "react-icons/bs";
-import SideNavbar from "../component/SideNavbar";
+
 import WorkStation from "../component/WorkStation";
 import ProjectSpotlight from "../component/ProjectSpotlight";
-import TrendingList from "../component/TrendingList";
 
+import EndSECtion from "../component/EndSEction";
+import Options from "../component/Options";
+import Feed from "../component/Feed"
+import SideBAr from "../component/SideBAr";
 export default function Dashboard() {
-  const [display, changeDisplay] = useState("hide");
-  const [value, changeValue] = useState(1);
+  const [display, changeDisplay] = useState(false);
+  const [search, changeSearch] = useState(false);
+
   return (
-    <Flex
-      h={[null, null, "100vh"]}
+    <Grid
+      templateColumns={["100%", "100%", "100%", "10% 65% 35%"]}
+      gap={1}
       minW="100%"
-      flexDir={["column", "column", "column", "row"]}
+ 
       overflow="hidden"
       bgColor="rgba(0, 0, 0, 0.92)"
+      z-index={0}
     >
       {/* Column 1 */}
-      <SideNavbar />
+      <SideBAr display={display} changeDisplay={changeDisplay} />
+      {/* {mobile nav bar} */}
+      <Flex
+        display={["flex", "flex", "flex", "none"]}
+        mt={5}
+        alig="center "
+        justify="space-evenly"
+      >
+        <Flex justifyContent="space-between" mr="14%">
+          <Button
+            onClick={() => {
+              changeDisplay(!display);
+            }}
+          >
+            <GiHamburgerMenu />
+          </Button>
+          <Image src="/logo.png" alt="" height={40} width={40} px={2} />
+
+          <Heading
+            fontSize={["2xl"]}
+            alignSelf="center"
+            letterSpacing="tight"
+            mx={2}
+            outline="none"
+          >
+            InvestDex
+          </Heading>
+        </Flex>
+
+        <Text ml={4} mt={4}> 24 GWei ETH: $1149.6</Text>
+     <Flex onClick={() => {
+            changeSearch(!search);
+          }}>   <IconButton
+          aria-label="Search database"
+          icon={<BsSearch color="gold" />}
+          
+        /></Flex>
+      </Flex>
       {/* main body */}
       <Flex
-        w={["100%", , "100%", "200vh"]}
+        w={["100%", , "100%", "99%"]}
         p="3%"
         flexDir="column"
         mx={["auto", "1px"]}
+        minW="70%"
         overflow="auto"
         scrollSnapType={"none"}
+        justifycontnet="flex-start"
         minH="100vh"
       >
         {/* search  */}
+
         <Flex
-          justifyContent="space-between"
+          // justifyContent="space-between"
           alignItems="center"
           alignContent="center"
+          display={["none", "flex"]}
         >
           <Heading fontWeight="bold" letterSpacing="tight" mr={["none", 4]}>
             InvestSuite
@@ -54,21 +106,27 @@ export default function Dashboard() {
             h={14}
             p={1}
             borderRadius={14}
-            display={["none", "flex"]}
+            display={[
+              `${search ? "fixed" : ""}`,`${search ? "fixed" : ""}`,
+              "flex",
+            ]}
           >
             <Stack
               spacing={4}
               borderRadius={50}
               border="1px solid  "
               borderColor="gold"
-              borderTopLeftColor="gold"
-              borderTopEndColor="black"
+              // borderTopLeftColor="gold"
+              // borderTopEndColor="black"
               borderRightColor="black"
               borderBlockEndColor="black"
               // borderBlockStartColor="black"
               minW={["90vh", "60vh", "60vh"]}
             >
-              <InputGroup justifyContent="flex-start" alignItems="center">
+              <InputGroup
+                //  justifyContent="flex-start"
+                alignItems="center"
+              >
                 <InputLeftAddon pointerEvents="none" background="transparent">
                   <BsSearch color="gold" />
                 </InputLeftAddon>
@@ -87,36 +145,21 @@ export default function Dashboard() {
         {/* {option} */}
 
         <Grid
-          templateColumns={[
-            "5fr",
-            "repeat(2,3fr)",
-            "repeat(3, 3fr)",
-            "repeat(3, 4fr)",
-          ]}
+          templateColumns={["5fr", "5fr", "5fr", "repeat(3, 4fr)"]}
           gap={4}
           mt={4}
           // w="100%"
         >
           <WorkStation />
-          <WorkStation />
-          <WorkStation />
+          <Options />
+          <Feed />
         </Grid>
 
         {/* projects */}
 
         <ProjectSpotlight />
       </Flex>
-      <Grid
-        minH={["100%", "100vh"]}
-        minW={["100vh", "30%", "30%", "30%"]}
-        w={["100%", "40vh"]}
-        bgColor="gray.800"
-        templateColumns={["5fr"]}
-        gap={1}
-        overflow="auto"
-      >
-        <TrendingList />
-      </Grid>
-    </Flex>
+      <EndSECtion />
+    </Grid>
   );
 }

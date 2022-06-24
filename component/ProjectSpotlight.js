@@ -23,7 +23,7 @@ const ProjectSpotlight = () => {
   const [value, changeValue] = useState(1);
   return (
     <Flex flexDir="column" w="100%">
-      <Heading justifyContent="space-evenly" fontSize="xl" mt={4}>
+      <Heading fontSize="xl" mt={4}>
         {" "}
         Spotlight{" "}
         <Text display="inline" fontSize="sm" fontWeight="normal">

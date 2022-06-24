@@ -19,40 +19,41 @@ import {
   Input,
   InputGroup,
   InputLeftElement,
+  LinkBox,
+  LinkOverlay,
 } from "@chakra-ui/react";
 import Image from "next/image";
 // import style from "../styles/SideNav.module.css";
-const NavLink = ({ icon, header, toggle, active, onClick }) => {
+const NavLink = ({ icon,id, header, toggle, active,more, ...rest }) => {
   return (
-    <Flex
-      className="sidebar-items"
-      outline="none"
-      mt={3}
-      color={active ? "green" : "#fff"}
-      onClick={onClick}
-    >
-      <Link
-        href=""
-        // mt={3}
-        _hover={{ textDecor: "none" }}
-        justifyContent="flex-start"
+    <Flex flexDir="column">
+      <Flex
+        my={4}
+        fontSize={!toggle ? "20px" : "15px"}
+        color={active === id ? "green" : "lightgray"}
+        ml="1%"
+        alignItems="center"
+        justifycontent="space-between"
+        _hover={{ cursor: "pointer" }}
+        {...rest}
       >
-        <Flex justifyContent="center">
-          {icon}
-          {toggle ? (
-            <Text
-              fontSize={["md"]}
-              alignSelf="center"
-              letterSpacing="tight"
-              mx={2}
-            >
-              {header}
-            </Text>
-          ) : (
-            <></>
-          )}
-        </Flex>
-      </Link>
+        {icon}
+
+        <Text ml="2%"> {toggle ? header : ""}</Text>
+      </Flex>
+      <Flex flexDir="column" align="flex-start"  ml="2%" >
+        {active===id && more
+          ? more.map((m, i) => {
+              return <Link key={i}
+                  fontSize="12px"
+              my={1}
+              _hover={{
+                textDecoration:"none"
+              }}
+              > {"--"} {!toggle ? "" : m}</Link>;
+            })
+          : ""}
+      </Flex>
     </Flex>
   );
 };
