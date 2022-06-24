@@ -225,13 +225,12 @@ const SideNavbar = ({display, changeDisplay}) => {
             );
           })}
 
-          <Divider mt={"100%"} />
-          <Flex alignItems="center">
-            <Avatar size="sm" mt={20} src="avatar-1.jpg" />
-            <Text textAlign="center" mx="2%">
-              {" "}
-              {toggle || display? "Login" : ""}
-            </Text>
+          <Divider mt={"150%"} />
+          <Flex alignItems="center" pos={"relative"} >
+            <Avatar size="sm" src="avatar-1.jpg" mx="auto" pos={"fixed"} bottom="2%" left={
+              toggle?"4%":"1%"
+            } />
+            
           </Flex>
         </Flex>
       </Flex>
