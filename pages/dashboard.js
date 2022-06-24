@@ -160,7 +160,10 @@ export default function Dashboard() {
         >
           <WorkStation />
           <Options />
-          <Feed />
+
+      
+            <Feed />
+   
         </Grid>
 
         {/* projects */}

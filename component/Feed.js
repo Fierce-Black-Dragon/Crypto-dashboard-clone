@@ -22,11 +22,12 @@ function Feature({ title, desc, active, ...rest }) {
     <Box
       p={5}
       minW="35vh"
-      minh={["4vh","7vh"]}
+      minh={["4vh", "17vh"]}
+      h={["30vh", "40vh", "40vh", "60vh"]}
       shadow="md"
       borderWidth="1px"
       borderRadius={35}
-      overflow="auto"
+    
       my={2}
       bgColor="#111118"
       {...rest}
