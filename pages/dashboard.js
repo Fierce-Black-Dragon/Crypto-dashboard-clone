@@ -167,6 +167,8 @@ export default function Dashboard() {
 
         <ProjectSpotlight />
       </Flex>
+
+      {/* list  */}
       <EndSECtion />
     </Grid>
   );

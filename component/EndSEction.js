@@ -11,7 +11,7 @@ const EndSECtion = () => {
   return (
     <Grid
       minH={["100%", "100vh"]}
-     w={["100%", "50%", "70%", "100%"]}
+     w={["100%", "100%", "10%", "100%"]}
     
  
       bgColor="#22222f"
@@ -37,7 +37,7 @@ const EndSECtion = () => {
               Trending
             </Text>
           </Flex>
-          <Button marginLeft={["44%","70%"]}>Show all</Button>
+          <Button marginLeft={["70%","80%"]}>Show all</Button>
         </Flex>
         <Flex
           display={["none", "none", "none", "flex"]}
